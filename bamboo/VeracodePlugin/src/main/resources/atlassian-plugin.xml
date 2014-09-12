@@ -1,0 +1,33 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+    </plugin-info>
+
+    <!-- internationalize your plugin -->
+    <resource type="i18n" name="VeracodePlugin language" location="english"/>
+
+    <!-- defines the upload task -->
+    <taskType name="Veracode Upload" class="com.build.bamboo.plugins.VeracodeUpload" key="veracode_upload_task">
+      <description>Upload something to Veracode</description>
+      <!-- Categories available in 3.1: "builder", "test" and "deployment"
+      <category name=""/>
+      -->
+      <configuration class="com.build.bamboo.plugins.VeracodeUploadConfigurator"/>
+      <resource type="freemarker" name="edit" location="editUploadTask.ftl"/>
+      <resource type="download" name="icon" location="icon.jpg"/>
+    </taskType>
+    
+    <!-- defines the results task -->
+    <taskType name="Veracode Results" class="com.build.bamboo.plugins.VeracodeResults" key="veracode_result_task">
+      <description>Get results from Veracode</description>
+      <!-- Categories available in 3.1: "builder", "test" and "deployment"
+      <category name=""/>
+      -->
+      <configuration class="com.build.bamboo.plugins.VeracodeResultsConfigurator"/>
+      <resource type="freemarker" name="edit" location="editResultTask.ftl"/>
+      <resource type="download" name="icon" location="icon.jpg"/>
+    </taskType>
+<component-import key="applicationLinkService" interface="com.atlassian.applinks.api.ApplicationLinkService"/>
+</atlassian-plugin>
