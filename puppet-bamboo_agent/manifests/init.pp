@@ -76,13 +76,13 @@
 # }
 #
 class bamboo_agent(
-  $server,
+  $server          = 'bamboo.advisory.com',
   $server_port     = 8085,
   $server_protocol = 'http',
 
   $agents         = [1],
   $agent_defaults = {},
-  $install_dir    = '/usr/local/bamboo',
+  $install_dir    = '/var/atlassian/application-data/bamboo-agent',
 
   $user_name      = 'bamboo',
   $manage_user    = true,
