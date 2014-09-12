@@ -1,5 +1,0 @@
-[@ww.textfield labelKey="veracodeupload.api_username" name="api_username" required='true'/]
-[@ww.textfield labelKey="veracodeupload.api_password" name="api_password" required='true'/]
-[@ww.textfield labelKey="veracodeupload.app_id" name="app_id" required='true'/]
-[@ww.textfield labelKey="veracodeupload.jira_username" name="jira_username" required='true'/]
-[@ww.password labelKey="veracodeupload.jira_password" name="jira_password" required='true'/]
